@@ -1,0 +1,30 @@
+
+        int[] numeros = new int[6];
+        boolean igual;
+        Random gerador = new Random();
+
+        // i -> variável de posicionamento
+        // i -> posição do valor gerado
+        for (int i = 0; i <= 5; i++) {
+            // rotina de conferência
+            while (true) {
+                igual = false;
+                numeros[i] = gerador.nextInt(60) + 1; // gerar número aleatório de 1 a 60 e salvar no array numeros
+                // j -> posição do valor de conferência
+                for (int j = 0; j < i; j++) {
+                    if (numeros[j] == numeros[i]) {
+                        igual = true;
+                    }
+                }
+                if (igual != true) {
+                    break;
+                }
+            }
+        }
+
+        jlN1.setText(Integer.toString(numeros[0]));
+        jlN2.setText(Integer.toString(numeros[1]));
+        jlN3.setText(Integer.toString(numeros[2]));
+        jlN4.setText(Integer.toString(numeros[3]));
+        jlN5.setText(Integer.toString(numeros[4]));
+        jlN6.setText(Integer.toString(numeros[5]));
